@@ -1,6 +1,6 @@
-import './components/Chat/Style.css';
+import './components/Location/Style.css';
 
-import Main from './components/Chat/Chats';
+import Main from './components/Location/IpInfo';
 
 const App = () => {
 	return (
