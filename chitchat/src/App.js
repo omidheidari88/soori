@@ -5,7 +5,8 @@ import Main from "./components/Chat/Chats";
 const App = () => {
   return (
     <>
-      <h1>hi omid</h1>
+      <h1>hello from pc</h1>
+
       <Main />
     </>
   );
