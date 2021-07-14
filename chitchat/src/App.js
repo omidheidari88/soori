@@ -1,13 +1,14 @@
-import './components/Chat/Style.css';
+import "./components/Chat/Style.css";
 
-import Main from './components/Chat/Chats';
+import Main from "./components/Chat/Chats";
 
 const App = () => {
-	return (
-		<>
-			<Main />
-		</>
-	);
+  return (
+    <>
+      <h1>hello from pc</h1>
+      <Main />
+    </>
+  );
 };
 
 export default App;
