@@ -7,8 +7,11 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
     "bootstrap-icons": "^1.5.0",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "express": "^4.17.1",
     "faker": "^5.5.3",
     "mapbox-gl": "^2.3.1",
     "react": "^17.0.2",
@@ -25,7 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node ./server"
   },
   "eslintConfig": {
     "extends": [

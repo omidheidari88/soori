@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        text-align: center;
+        height: 100px;
+        width: 100px;
+        line-height: 100px;
+        border: 3px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const element = document.createElement("div");
+      element.className = "box";
+      let count = 0;
+      element.innerText = count;
+      document.body.append(element);
+      const see = setInterval(() => {
+        count++;
+        const length = 100 + count + "px";
+        element.style.height = length;
+        element.style.lineHeight = length;
+        element.style.width = length;
+        element.innerText = count;
+      }, 100);
+    </script>
+  </body>
+</html>

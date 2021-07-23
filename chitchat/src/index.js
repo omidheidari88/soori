@@ -1,4 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App'
-ReactDOM.render(<App />,document.getElementById('roots'));
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { ContextProvider } from "./components/Store/Context/Context";
+ReactDOM.render(
+  <ContextProvider>
+    <App />
+  </ContextProvider>,
+  document.getElementById("roots")
+);
