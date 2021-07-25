@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 * {
   box-sizing: border-box;
@@ -15,69 +15,69 @@ body {
 
   min-height: 100vh;
   margin: 0;
-}
+} */
 
 h3 {
-  margin: 10px 0;
+	margin: 10px 0;
 }
 
 h6 {
-  margin: 5px 0;
-  text-transform: uppercase;
+	margin: 5px 0;
+	text-transform: uppercase;
 }
 
 p {
-  font-size: 14px;
-  line-height: 21px;
+	font-size: 14px;
+	line-height: 21px;
 }
 
 .card-container {
-  background-color: #333333;
-  border-radius: 5px;
-  box-shadow: -5px 10px 8px -8px rgba(0, 0, 0, 0.75);
-  color: #e8e8e9;
-  padding-top: 30px;
-  position: relative;
-  width: 350px;
-  max-width: 100%;
-  text-align: center;
+	background-color: #333333;
+	border-radius: 5px;
+	box-shadow: -5px 10px 8px -8px rgba(0, 0, 0, 0.75);
+	color: #e8e8e9;
+	padding-top: 30px;
+	position: relative;
+	width: 350px;
+	max-width: 100%;
+	text-align: center;
 }
 
 .card-container .info {
-  color: #ffffff;
-  background-color: #febb0b;
-  border-radius: 3px;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 3px 7px;
-  position: absolute;
-  top: 30px;
-  left: 30px;
+	color: #ffffff;
+	background-color: #febb0b;
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 3px 7px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
 }
 
 .card-container .round {
-  border: 1px solid #03bfcb;
-  border-radius: 50%;
-  padding: 7px;
+	border: 1px solid #03bfcb;
+	border-radius: 50%;
+	padding: 7px;
 }
 
 .footer {
-  background-color: #1f1e20;
-  text-align: left;
-  padding: 15px;
-  margin-top: 30px;
+	background-color: #1f1e20;
+	text-align: left;
+	padding: 15px;
+	margin-top: 30px;
 }
 
 img {
-  max-width: 100px;
-  max-height: 100px;
+	max-width: 100px;
+	max-height: 100px;
 }
 
 .loading {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: stretch;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
 }

@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, {Component} from 'react';
-import Loading from '../Services/Loader';
+import Loading from '../../Services/Loader';
 import Info from './Info';
+import './Style.css';
 class IpInfo extends Component {
 	state = {
 		isMounted: true,

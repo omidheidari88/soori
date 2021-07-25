@@ -1,3 +1,28 @@
 {
-   "git.ignoreLimitWarning": true
+   "files.exclude": {
+      // "package.json": true,
+      "public": true,
+      "server": true,
+      // "*/index.css": true,
+      "*/index.js": true,
+      ".gitignore": true,
+      ".gitattributes": true,
+      "node_modules": true,
+      "yarn.lock": true,
+      "package-lock.json": true,
+      "README.md": true,
+      ".env": true,
+      "mock-api": true,
+      // "**/HOC": true,
+      // "**/Todo": true,
+      // "**/Tasks": true,
+      // "**/Map": true,
+      // "**/Posts": true,
+      // "**/Location": true,
+      // "**/Clash": true,
+      // "**/Chat": true,
+      // "**/Auth": true,
+      // "**/Store": true,
+   },
+   "extensions.ignoreRecommendations": true
 }
