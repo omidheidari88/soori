@@ -1,50 +1,59 @@
-import React, { Component, createRef } from "react";
-class Chat extends Component {
-  chatListsWrapper = createRef();
+import React, {Component} from 'react';
+import Footer from './Footer';
+import Header from './Header';
+import avatar1 from './img/avatar1.png';
+import './Style.css';
+import {fakerMessages} from './faker';
+import ChatItem from './ChatItem';
+export class Chat extends Component {
+	constructor(props) {
+		super(props);
 
-  getSnapshotBeforeUpdate(prevProps) {
-    if (prevProps.chatList.length !== this.props.chatList.length) {
-      const wrapper = this.chatListsWrapper.current;
-      return wrapper?.scrollHeight;
-    }
-    return null;
-  }
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (snapshot !== null) {
-      const wrapper = this.chatListsWrapper.current;
-      wrapper.scrollTop = wrapper.scrollHeight - snapshot;
-    }
-  }
-  render() {
-    const { chatList, scrollHandler } = this.props;
-    const chatRender = chatList.map((item) => {
-      return (
-        <div className={`chat ${item?.type === "reciever" && "chat-left"}`}>
-          <div className="chat-avatar">
-            <a className="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="right" title data-original-title={item.name}>
-              <img src={item?.type === "reciever" ? item.image2 : item.image1} alt="..." />
-              <i />
-            </a>
-          </div>
-          <div className="chat-body">
-            <div className="chat-content">
-              <p>{item.message}</p>
-              <time className="chat-time" dateTime={item.time}>
-                {item.time}
-              </time>
-            </div>
-          </div>
-        </div>
-      );
-    });
-    return (
-      <div className="panel-body">
-        <div className="chats" ref={this.chatListsWrapper} onScroll={scrollHandler}>
-          {chatRender}
-        </div>
-      </div>
-    );
-  }
+		this.state = {
+			title: 'Random Chat',
+			chatAttribute: fakerMessages(8),
+		};
+	}
+
+	messageDataHandler = (message) => {
+		this.setState((prevState) => {
+			return {
+				...prevState,
+				chatAttribute: [
+					...prevState.chatAttribute,
+					{
+						message,
+						time: new Date().toLocaleString(),
+						image1: avatar1,
+					},
+				],
+			};
+		});
+	};
+	scrollHandler = (e) => {
+		if (e.target.scrollTop === 0) {
+			this.setState((prevState) => {
+				return {
+					...prevState,
+					chatAttribute: [...fakerMessages(5), ...prevState.chatAttribute],
+				};
+			});
+		}
+	};
+
+	render() {
+		return (
+			<div className='container bootstrap snippets'>
+				<div className='col-md-7 col-xs-12 col-md-offset-2'>
+					<div class='panel' id='chat'>
+						<Header title={this.state.title} />
+						<ChatItem chatList={this.state.chatAttribute} scrollHandler={this.scrollHandler} />
+						<Footer getValue={this.messageDataHandler} />
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default Chat;

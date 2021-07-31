@@ -1,22 +1,27 @@
 import {Get} from '../../Services/axios';
 import React, {useEffect, useState} from 'react';
 import './Style.css';
-import Item from './Item';
+import Items from './Items';
 
 const Blog = () => {
+	const url = process.env.REACT_APP_BLOG_URL;
+
 	const [posts, setPosts] = useState([]);
 	useEffect(() => {
-		Get('posts')
+		Get(`${url}/posts`)
 			.then((response) => {
-				setPosts(response.data);
+				setPosts(response?.data);
 			})
 			.catch((error) => console.log(error));
 	}, []);
-	const item = posts.map((post) => <Item post={post} />);
+	const items = posts.map((post, index) => {
+		const variant = index === 0 ? 1 : 2;
+		return <Items post={post} variant={variant} />;
+	});
 	return (
 		<>
 			<div className='main'>
-				<div className='band'>{item}</div>
+				<div className='band'>{items}</div>
 			</div>
 		</>
 	);

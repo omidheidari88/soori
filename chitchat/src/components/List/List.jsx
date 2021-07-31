@@ -3,16 +3,18 @@ import React, {Component} from 'react';
 import SideBar from './SideBar';
 import {Get} from '../../Services/axios';
 import Posts from './Posts';
-class Main extends Component {
+
+const url = process.env.REACT_APP_LIST_URL;
+class List extends Component {
 	state = {
 		posts: [],
 		comments: [],
 		sideBarPost: [],
 	};
 	getData = async () => {
-		const postResponse = await Get('http://localhost:3002/posts');
-		console.log(postResponse);
-		const commentsResponse = await Get('http://localhost:3002/comments');
+		const postResponse = await Get(`${url}/posts`);
+
+		const commentsResponse = await Get(`${url}/comments`);
 		this.setState((prevState) => {
 			return {
 				...prevState,
@@ -24,8 +26,8 @@ class Main extends Component {
 	};
 
 	getPostIdFromSideBar = async (id) => {
-		const postResponse = await Get(`http://localhost:3002/posts/${id}`);
-		const commentsResponse = await Get(`http://localhost:3002/comments/${id}`);
+		const postResponse = await Get(`${url}/posts/${id}`);
+		const commentsResponse = await Get(`${url}/comments/${id}`);
 		this.setState({
 			posts: [postResponse.data],
 			comments: [commentsResponse.data],
@@ -46,4 +48,4 @@ class Main extends Component {
 	}
 }
 
-export default Main;
+export default List;

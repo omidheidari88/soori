@@ -2,7 +2,7 @@ import {Get} from '../../Services/axios';
 import React, {useEffect, useState} from 'react';
 import Card from './Card';
 import './Style.css';
-const Main = () => {
+const Clash = () => {
 	const [heros, setHeros] = useState([]);
 	const [current, setCurrent] = useState(0);
 	const arrowHandler = (direction) => {
@@ -15,7 +15,8 @@ const Main = () => {
 	};
 
 	useEffect(() => {
-		return Get('http://localhost:3001/heroes').then((response) => setHeros(response.data));
+		const url = process.env.REACT_APP_CLASH_URL;
+		return Get(`${url}/heroes`).then((response) => setHeros(response.data));
 	}, []);
 	return (
 		<>
@@ -24,4 +25,4 @@ const Main = () => {
 	);
 };
 
-export default Main;
+export default Clash;

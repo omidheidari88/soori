@@ -1,32 +1,34 @@
 import React from 'react';
 import './style.css';
+import {Link} from 'react-router-dom';
+const NavBarHandler = ({title, path}) => {
+	return <Link to={path}>{title}</Link>;
+};
 const Nav = () => {
 	return (
 		<nav>
-			<ul>
+			<ul id='nav'>
 				<li>
-					<a href='/'>Home</a>
+					<NavBarHandler title={'Home'} path={'/'} />
+					{/* <Link to={'/'}>Home</Link> */}
 				</li>
 				<li>
-					<a href='/blog'>Blog</a>
+					<Link to={'/blog'}>Blog</Link>
 				</li>
 				<li>
-					<a href='/chat'>Chat</a>
+					<Link to={'/chat'}>Chat</Link>
 				</li>
 				<li>
-					<a href='/login'>Login</a>
+					<Link to={'/location'}>Location</Link>
 				</li>
 				<li>
-					<a href='/location'>Location</a>
+					<Link to={'/clash'}>Clash</Link>
 				</li>
 				<li>
-					<a href='/clash'>Clash</a>
+					<Link to={'/map'}>Map</Link>
 				</li>
 				<li>
-					<a href='/map'>Map</a>
-				</li>
-				<li>
-					<a href='/post'>Post</a>
+					<Link to={'/list'}>List</Link>
 				</li>
 			</ul>
 		</nav>

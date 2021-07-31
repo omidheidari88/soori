@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Loading from '../../Services/Loader';
 import Info from './Info';
 import './Style.css';
-class IpInfo extends Component {
+class Location extends Component {
 	state = {
 		isMounted: true,
 		myLocation: '',
@@ -50,4 +50,4 @@ class IpInfo extends Component {
 	}
 }
 
-export default IpInfo;
+export default Location;

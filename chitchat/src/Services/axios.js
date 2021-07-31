@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = process.env.REACT_APP_BASEURL;
+// axios.defaults.baseURL = process.env.REACT_APP_BASEURL;
 // axios.defaults.headers.common['Authorization'] = process.env.REACT_APP_TOKEN;
 
 export const Get = async (url, config = {}) => {
