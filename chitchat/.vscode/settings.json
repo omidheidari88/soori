@@ -2,9 +2,9 @@
    "files.exclude": {
       // "package.json": true,
       "public": true,
-      "server": true,
+      // "server": true,
       // "*/index.css": true,
-      "*/index.js": true,
+      // "*/index.js": true,
       ".gitignore": true,
       ".gitattributes": true,
       "node_modules": true,
@@ -21,8 +21,11 @@
       "**/Location": true,
       "**/Clash": true,
       "**/Chat": true,
-      "**/Auth": true,
-      // "**/Store": true,
+      // "**/Auth": true,
+      "**/Store": true,
+      "**/Blog": true,
+      "**/Dashboard": true,
+      "**/List": true,
    },
    "extensions.ignoreRecommendations": true
 }

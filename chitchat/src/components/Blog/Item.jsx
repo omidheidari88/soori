@@ -1,17 +1,21 @@
 import React, {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
 import {Get} from '../../Services/axios';
 
-const Item = (props) => {
-	console.log(props);
+const Item = () => {
+	const params = useParams();
+	console.log(params);
+	const id = params.id;
+
 	const [post, setPost] = useState([]);
 
-	// useEffect(() => {
-	// 	Get(`posts/${id}`)
-	// 		.then((response) => {
-	// 			setPost(response?.data);
-	// 		})
-	// 		.catch((error) => console.log(error));
-	// }, [id]);
+	useEffect(() => {
+		Get(`http://localhost:3003/posts/${id}`)
+			.then((response) => {
+				setPost(response?.data);
+			})
+			.catch((error) => console.log(error));
+	}, [id]);
 
 	return (
 		<div className='item-2'>

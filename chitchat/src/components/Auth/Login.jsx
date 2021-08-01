@@ -12,8 +12,7 @@ const Login = () => {
 		e?.preventDefault();
 		const username = document.querySelector('#username').value;
 		const password = document.querySelector('#password').value;
-
-		Post('login', {data: {username, password}}).then((res) => {
+		Post('http://localhost:4000/login', {data: {username, password}}).then((res) => {
 			if (res.data.success) {
 				setToken(res.data.token);
 				setMessage(null);
@@ -22,13 +21,13 @@ const Login = () => {
 			}
 		});
 	};
+
 	const pageHandler = async (token) => {
-		const response = await Get('chat', {
+		const response = await Get('http://localhost:4000/chat', {
 			headers: {
 				authorization: process.env.REACT_APP_TOKEN,
 			},
 		});
-
 		if (response.data.success) {
 			localStorage.setItem('token', token);
 			localStorage.setItem('user', JSON.stringify(response.data.user));
