@@ -1,37 +1,50 @@
 import React from 'react';
 import './style.css';
-import {Link} from 'react-router-dom';
-const NavBarHandler = ({title, path}) => {
-	return <Link to={path}>{title}</Link>;
-};
+import {Link, NavLink} from 'react-router-dom';
+
 const Nav = () => {
 	return (
 		<nav>
 			<ul id='nav'>
 				<li>
-					<NavBarHandler title={'Home'} path={'/'} />
-					{/* <Link to={'/'}>Home</Link> */}
+					<NavLink exact activeClassName='activeLink' to={'/'}>
+						Home
+					</NavLink>
 				</li>
 				<li>
-					<Link to={'/login'}>Login</Link>
+					<NavLink activeClassName='activeLink' to={'/login'}>
+						Login
+					</NavLink>
 				</li>
 				<li>
-					<Link to={'/blog'}>Blog</Link>
+					<NavLink activeClassName='activeLink' to={'/blog'}>
+						Blog
+					</NavLink>
 				</li>
 				<li>
-					<Link to={'/chat'}>Chat</Link>
+					<NavLink activeClassName='activeLink' to={'/chat'}>
+						Chat
+					</NavLink>
 				</li>
 				<li>
-					<Link to={'/location'}>Location</Link>
+					<NavLink activeClassName='activeLink' to={'/location'}>
+						Location
+					</NavLink>
 				</li>
 				<li>
-					<Link to={'/clash'}>Clash</Link>
+					<NavLink activeClassName='activeLink' to={'/clash'}>
+						Clash
+					</NavLink>
 				</li>
 				<li>
-					<Link to={'/map'}>Map</Link>
+					<NavLink activeClassName='activeLink' to={'/map'}>
+						Map
+					</NavLink>
 				</li>
 				<li>
-					<Link to={'/list'}>List</Link>
+					<NavLink activeClassName='activeLink' to={'/list'}>
+						List
+					</NavLink>
 				</li>
 			</ul>
 		</nav>
