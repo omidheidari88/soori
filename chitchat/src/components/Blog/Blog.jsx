@@ -4,11 +4,11 @@ import './Style.css';
 import Items from './Items';
 
 const Blog = () => {
-	const url = process.env.REACT_APP_BLOG_URL;
+	const Url = process.env.REACT_APP_BLOG_URL;
 
 	const [posts, setPosts] = useState([]);
 	useEffect(() => {
-		Get(`${url}/posts`)
+		Get(`${Url}/posts`)
 			.then((response) => {
 				setPosts(response?.data);
 			})

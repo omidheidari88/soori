@@ -3,9 +3,7 @@ import {useParams} from 'react-router-dom';
 import {Get} from '../../Services/axios';
 
 const Item = () => {
-	const params = useParams();
-	console.log(params);
-	const id = params.id;
+	const {id} = useParams();
 
 	const [post, setPost] = useState([]);
 

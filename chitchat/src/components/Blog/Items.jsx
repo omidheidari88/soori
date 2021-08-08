@@ -1,11 +1,12 @@
-import {A} from 'hookrouter';
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {useRouteMatch} from 'react-router-dom';
 
 const Items = ({post, variant}) => {
+	let {path} = useRouteMatch();
 	return (
 		<div className={`item-${variant}`}>
-			<Link to={`list/${post.id}`} className='card'>
+			<Link to={`${path}/${post.id}`} className='card'>
 				<div
 					className='thumb'
 					style={{

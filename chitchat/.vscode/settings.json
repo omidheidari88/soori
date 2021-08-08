@@ -23,7 +23,7 @@
       "**/Chat": true,
       // "**/Auth": true,
       "**/Store": true,
-      "**/Blog": true,
+      // "**/Blog": true,
       // "**/Dashboard": true,
       "**/List": true,
    },

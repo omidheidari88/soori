@@ -11,12 +11,12 @@ import Home from '../components/Dashboard/Home';
 const routes = [
 	{path: '/', Component: Home, props: {title: 'React App'}},
 	{path: '/blog', Component: Blog},
+	{path: '/blog/:id', Component: Item},
 	{path: '/chat', Component: Chats},
 	{path: '/login', Component: Login},
 	{path: '/clash', Component: Clash},
 	{path: '/location', Component: Location},
 	{path: '/map', Component: IMap},
 	{path: '/list', Component: List},
-	{path: '/list/:id', Component: Item},
 ];
 export default routes;
