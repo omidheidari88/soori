@@ -1,102 +1,114 @@
 {
-    "heroes": [{
-        "id": 1,
-        "name": "barbarian",
-        "level": "Level 4",
-        "description": "The Barbarian is a kilt-clad Scottish warrior with an angry, battle-ready expression, hungry for destruction.He has Killer yellow horseshoe mustache.",
-        "items": [{
-                "number": 20,
-                "title": "training"
-            },
-            {
-                "number": 16,
-                "title": "speed"
-            },
-            {
-                "number": 150,
-                "title": "cost"
-            }
-        ],
-        "img": "./assets/barbarian.png",
-        "max": 669
-    }, {
-        "id": 2,
-        "name": "archer",
-        "level": "Level 5",
-        "description": "The Archer is a female warrior with sharp eyes. She wears a short, light green dress, a hooded cape, a leather belt and an attached small pouch.",
-        "items": [{
-                "number": 25,
-                "title": "training"
-            },
-            {
-                "number": 24,
-                "title": "speed"
-            },
-            {
-                "number": 300,
-                "title": "cost"
-            }
-        ],
-        "img": "./assets/archer.png"
-    }, {
-        "id": 3,
-        "name": "giant",
-        "level": "Level 5",
-        "description": " Slow, steady and powerful, Giants are massive warriors that soak up huge amounts of damage. Show them a turret or cannon and you'll see their fury unleashed!",
-        "items": [{
-                "number": 2,
-                "title": "training"
-            },
-            {
-                "number": 12,
-                "title": "speed"
-            },
-            {
-                "number": 2250,
-                "title": "cost"
-            }
-        ],
-        "img": "./assets/giant.png"
-    }, {
-        "id": 4,
-        "name": "goblin",
-        "level": "Level 5",
-        "description": "These pesky little creatures only have eyes for one thing: LOOT! They are faster than a Spring Trap, and their hunger for resources is limitless.",
-        "items": [{
-                "number": 30,
-                "title": "training"
-            },
-            {
-                "number": 32,
-                "title": "speed"
-            },
-            {
-                "number": 100,
-                "title": "cost"
-            }
-        ],
-        "img": "./assets/goblin.png"
-    }, {
-        "id": 5,
-        "name": "wizard",
-        "level": "Level 6",
-        "description": "The Wizard is a terrifying presence on the battlefield. Pair him up with some of his fellows and cast concentrated blasts of destruction on anything, land or sky!",
-        "items": [{
-                "number": 5,
-                "title": "training"
-            },
-            {
-                "number": 16,
-                "title": "speed"
-            },
-            {
-                "number": 4000,
-                "title": "cost"
-            }
-        ],
-        "img": "./assets/wizard.png"
-    }],
-    "restricts": [{
+    "heroes": [
+        {
+            "id": 1,
+            "name": "barbarian",
+            "level": "Level 4",
+            "description": "The Barbarian is a kilt-clad Scottish warrior with an angry, battle-ready expression, hungry for destruction.He has Killer yellow horseshoe mustache.",
+            "items": [
+                {
+                    "number": 20,
+                    "title": "training"
+                },
+                {
+                    "number": 16,
+                    "title": "speed"
+                },
+                {
+                    "number": 150,
+                    "title": "cost"
+                }
+            ],
+            "img": "./assets/barbarian.png",
+            "max": 669
+        },
+        {
+            "id": 2,
+            "name": "archer",
+            "level": "Level 5",
+            "description": "The Archer is a female warrior with sharp eyes. She wears a short, light green dress, a hooded cape, a leather belt and an attached small pouch.",
+            "items": [
+                {
+                    "number": 25,
+                    "title": "training"
+                },
+                {
+                    "number": 24,
+                    "title": "speed"
+                },
+                {
+                    "number": 300,
+                    "title": "cost"
+                }
+            ],
+            "img": "http://localhost:3000/assets/archer.png"
+        },
+        {
+            "id": 3,
+            "name": "giant",
+            "level": "Level 5",
+            "description": " Slow, steady and powerful, Giants are massive warriors that soak up huge amounts of damage. Show them a turret or cannon and you'll see their fury unleashed!",
+            "items": [
+                {
+                    "number": 2,
+                    "title": "training"
+                },
+                {
+                    "number": 12,
+                    "title": "speed"
+                },
+                {
+                    "number": 2250,
+                    "title": "cost"
+                }
+            ],
+            "img": "./assets/giant.png"
+        },
+        {
+            "id": 4,
+            "name": "goblin",
+            "level": "Level 5",
+            "description": "These pesky little creatures only have eyes for one thing: LOOT! They are faster than a Spring Trap, and their hunger for resources is limitless.",
+            "items": [
+                {
+                    "number": 30,
+                    "title": "training"
+                },
+                {
+                    "number": 32,
+                    "title": "speed"
+                },
+                {
+                    "number": 100,
+                    "title": "cost"
+                }
+            ],
+            "img": "./assets/goblin.png"
+        },
+        {
+            "id": 5,
+            "name": "wizard",
+            "level": "Level 6",
+            "description": "The Wizard is a terrifying presence on the battlefield. Pair him up with some of his fellows and cast concentrated blasts of destruction on anything, land or sky!",
+            "items": [
+                {
+                    "number": 5,
+                    "title": "training"
+                },
+                {
+                    "number": 16,
+                    "title": "speed"
+                },
+                {
+                    "number": 4000,
+                    "title": "cost"
+                }
+            ],
+            "img": "./assets/wizard.png"
+        }
+    ],
+    "restricts": [
+        {
             "hero_id": 1,
             "max": 659
         },

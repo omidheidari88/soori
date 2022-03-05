@@ -5,10 +5,10 @@ import avatar1 from './img/avatar1.png';
 import './Style.css';
 import {fakerMessages} from './faker';
 import ChatItem from './ChatItem';
+
 export class Chat extends Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			title: 'Random Chat',
 			chatAttribute: fakerMessages(8),
@@ -43,10 +43,10 @@ export class Chat extends Component {
 
 	render() {
 		return (
-			<div className='container bootstrap snippets'>
+			<div className='chitchat'>
 				<div className='col-md-7 col-xs-12 col-md-offset-2'>
-					<div class='panel' id='chat'>
-						<Header title={this.state.title} />
+					<div className='panel' id='chat'>
+						<Header />
 						<ChatItem chatList={this.state.chatAttribute} scrollHandler={this.scrollHandler} />
 						<Footer getValue={this.messageDataHandler} />
 					</div>
@@ -55,5 +55,4 @@ export class Chat extends Component {
 		);
 	}
 }
-
 export default Chat;

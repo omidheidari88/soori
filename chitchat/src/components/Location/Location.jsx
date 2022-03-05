@@ -10,9 +10,7 @@ class Location extends Component {
 	};
 	getIp = async () => {
 		try {
-			// const getCurrentIp = await axios.get('http://ip-api.com/json/');
-			// console.log(getCurrentIp);
-			const response = await axios.get(`http://ipwhois.app/json/37.98.9.15`);
+			const response = await axios.get(`http://ipwhois.app/json/`);
 			const {city, country_code, country_flag, country, isp, ip, latitude, longitude, success} = response.data;
 			this.setState((prevState) => {
 				return {

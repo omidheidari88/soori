@@ -47,7 +47,7 @@ body {
 
 .clash-card__image {
 	position: relative;
-	height: 230px;
+	height: 290px;
 	margin-bottom: 35px;
 	border-top-left-radius: 14px;
 	border-top-right-radius: 14px;
@@ -64,15 +64,15 @@ body {
 	left: -70px;
 }
 
-.clash-card__image--archer {
-	background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer-bg.jpg');
+.clash-card__image__archer {
+	background: url('http://localhost:3000/assets/archer.png');
 }
 
-.clash-card__image--archer img {
+.clash-card__image__archer img {
 	width: 400px;
 	position: absolute;
 	top: -34px;
-	left: -37px;
+	left: -3px;
 }
 
 .clash-card__image--giant {

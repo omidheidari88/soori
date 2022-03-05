@@ -6,14 +6,17 @@ app.use(cors());
 app.use(bodyParser.json());
 const token = '7learn';
 app.post('/login', (req, res) => {
-	console.log(req.body);
 	const {username, password} = req.body.data;
-
 	if ((username === 'admin', password === 'admin')) {
 		res.send({
 			success: true,
 			message: 'you successfully loged in',
 			token,
+			user: {
+				name: 'omid',
+				id: '1',
+				mobile: '+9893737398553',
+			},
 		});
 	} else {
 		res.send({

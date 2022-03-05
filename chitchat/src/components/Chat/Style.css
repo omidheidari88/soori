@@ -1,26 +1,7 @@
-/* body {
-  background: #ddd;
-  margin-top: 10px;
+.chitchat {
+	display: flex;
+	flex: 1;
 }
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #62a8ea #dfe9ef;
-}
-
-*::-webkit-scrollbar {
-  width: 12px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #dfe9ef;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #62a8ea;
-  border-radius: 20px;
-  border: 3px solid #dfe9ef;
-} */
 
 .chat-box {
 	height: 100%;

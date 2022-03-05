@@ -4,11 +4,15 @@ import axios from 'axios';
 // axios.defaults.headers.common['Authorization'] = process.env.REACT_APP_TOKEN;
 
 export const Get = async (url, config = {}) => {
-	try {
-		return await axios.get(url, config);
-	} catch (error) {
-		console.log(error);
-	}
+	const promise = new Promise((reslove, reject) => {
+		try {
+			const response = axios.get(url, config);
+			return reslove(response);
+		} catch (error) {
+			reject(error);
+		}
+	});
+	return promise;
 };
 
 export const Post = (url, data, config = {}) => {

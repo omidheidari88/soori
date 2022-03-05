@@ -46,6 +46,11 @@ const Nav = () => {
 						List
 					</NavLink>
 				</li>
+				<li>
+					<NavLink activeClassName='activeLink' to={'/task'}>
+						Task
+					</NavLink>
+				</li>
 			</ul>
 		</nav>
 	);

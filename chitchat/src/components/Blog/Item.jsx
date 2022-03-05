@@ -11,19 +11,14 @@ const Item = () => {
 		Get(`http://localhost:3003/posts/${id}`)
 			.then((response) => {
 				setPost(response?.data);
+				console.log(post);
 			})
 			.catch((error) => console.log(error));
 	}, [id]);
 
 	return (
 		<div className='item-2'>
-			<div
-				className='thumb'
-				style={{
-					backgroundImage: `url(${post?.image})`,
-				}}
-			></div>
-			<img src={post?.image} alt='' />
+			<img src={`http://localhost:3000/${post?.image}`} alt='post' />
 			<article>
 				<h1>{post?.title}</h1>
 				<span>{post?.summary}</span>

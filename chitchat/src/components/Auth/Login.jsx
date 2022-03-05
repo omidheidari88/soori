@@ -6,19 +6,21 @@ import './Style.css';
 import {Redirect, useHistory, useLocation} from 'react-router-dom';
 
 const Login = () => {
+	const [message, setMessage] = useState(null);
 	const [state, dispatch] = useMyContext();
 	const location = useLocation();
 	const history = useHistory();
 	const redirectUrl = location?.state?.from;
 	const token = state.auth.token;
-	const [message, setMessage] = useState(null);
 	const formSubmitted = async (e) => {
 		e?.preventDefault();
 		const username = document.querySelector('#username').value;
 		const password = document.querySelector('#password').value;
 		Post('http://localhost:4000/login', {data: {username, password}}).then((res) => {
 			if (res.data.success) {
+				console.log(res.data.user);
 				dispatch({type: actions.USER_LOGIN_SUCCESS, payload: {token: res.data.token}});
+				dispatch({type: actions.ADD_USER, payload: {user: res.data.user}});
 				setMessage(null);
 				history.replace(redirectUrl);
 			} else {

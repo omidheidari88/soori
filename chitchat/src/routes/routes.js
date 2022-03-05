@@ -7,6 +7,7 @@ import Location from '../components/Location/Location';
 import List from '../components/List/List';
 import Item from '../components/Blog/Item';
 import Home from '../components/Dashboard/Home';
+import Task from '../components/Tasks/Tasks';
 
 const routes = [
 	{path: '/', Component: Home, props: {title: 'React App'}},
@@ -18,5 +19,6 @@ const routes = [
 	{path: '/location', Component: Location},
 	{path: '/map', Component: IMap},
 	{path: '/list', Component: List},
+	{path: '/task', Component: Task},
 ];
 export default routes;

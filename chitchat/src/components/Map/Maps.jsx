@@ -18,10 +18,14 @@ const Maps = () => {
 	useEffect(() => {
 		if (hoveredArea) {
 			async function fetchData() {
-				const nameOfCountry = hoveredArea?.name;
-				const countries = await wiki()?.page(nameOfCountry);
+				let nameOfCountry = hoveredArea?.name;
+				const countries = await wiki()
+					?.page(nameOfCountry)
+					.catch((error) => {
+						return;
+					});
 				if (nameOfCountry !== undefined) {
-					const [summary, info, images] = await Promise.all([countries.summary(), countries.info(), countries.images()]);
+					const [summary, info, images] = await Promise.all([countries?.summary(), countries?.info(), countries?.images()]);
 					if (summary) {
 						setSummary(summary);
 					}
@@ -39,31 +43,35 @@ const Maps = () => {
 					});
 				}
 			}
+
 			fetchData();
 		}
-	}, [hoveredArea?.name]);
+	}, [hoveredArea, hoveredArea?.name]);
 
-	const location = useLocation();
-	const [state] = useMyContext();
-	const token = state.auth.token;
+	// const location = useLocation();
+	// const [state] = useMyContext();
+	// const token = state.auth.token;
 	const page = () => {
-		if (token === process.env.REACT_APP_TOKEN) {
-			return (
-				<div className='container'>
-					<div>
-						<ImageMapper onMouseEnter={(area) => enterArea(area)} onMouseLeave={() => leaveArea()} width={1000} imageWidth={1000} src={IMAGE_URL} map={map} />
-						{hoveredArea && (
-							<span className='tooltips' style={{...getTipPosition(hoveredArea)}}>
-								{hoveredArea && hoveredArea.name}
-							</span>
-						)}
-					</div>
-					<Description summary={summary} info={info} images={images} />
+		// if (token === process.env.REACT_APP_TOKEN) {
+		return (
+			<div className='container'>
+				<div>
+					<ImageMapper onMouseEnter={(area) => enterArea(area)} onMouseLeave={() => leaveArea()} width={1000} imageWidth={1000} src={IMAGE_URL} map={map} />
+					{hoveredArea && (
+						<span className='tooltips' style={{...getTipPosition(hoveredArea)}}>
+							{hoveredArea && hoveredArea.name}
+						</span>
+					)}
 				</div>
-			);
-		} else {
-			return <Redirect to={{pathname: './login', state: {from: location}}} />;
-		}
+				<br />
+				<br />
+				{summary && <Description summary={summary} info={info} images={images} />}
+			</div>
+		);
+		// } else {
+		// 	// return <Redirect to={{pathname: './login', state: {from: location}}} />;
+		// 	<h1>omid</h1>;
+		// }
 	};
 
 	return <>{page()}</>;
